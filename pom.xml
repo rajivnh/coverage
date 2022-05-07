@@ -99,7 +99,7 @@
 							<goal>prepare-agent</goal>
 						</goals>
 						<configuration>
-							<destFile>${project.build.directory}/coverage-reports/jacoco.exec</destFile>
+							<destFile>${project.build.directory}/jacoco.exec</destFile>
 							<propertyName>surefireArgLine</propertyName>
 						</configuration>
 					</execution>
@@ -119,6 +119,7 @@
 						<goals>
 							<goal>check</goal>
 						</goals>
+						<phase>package</phase>
 						<configuration>
 							<excludes>
 								<exclude>com/lti/store/**</exclude>
@@ -145,22 +146,5 @@
 				</executions>
 			</plugin>
 		</plugins>
-	</build>
-	<reporting>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>2.22.2</version>
-				<configuration>
-					<outputName>JUnit-Examples-Test-Report</outputName>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jxr-plugin</artifactId>
-				<version>3.1.1</version>
-			</plugin>
-		</plugins>
-	</reporting>
+	</build>	
 </project>
